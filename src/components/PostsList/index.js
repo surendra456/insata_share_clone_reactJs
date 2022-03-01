@@ -88,7 +88,7 @@ class PostsList extends Component {
         if (each.postId === postId) {
           return {
             ...each,
-            likesCount: each.likesCount + 1,
+
             likeStatus: !each.likeStatus,
           }
         }
@@ -115,7 +115,7 @@ class PostsList extends Component {
         if (each.postId === postId) {
           return {
             ...each,
-            likesCount: each.likesCount - 1,
+
             likeStatus: !each.likeStatus,
           }
         }
