@@ -150,7 +150,7 @@ class PostsList extends Component {
 
   renderPostsSuccessView = () => {
     const {postsData, button} = this.state
-    console.log(postsData)
+
     return (
       <SearchContext.Provider
         value={{

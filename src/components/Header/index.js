@@ -14,6 +14,7 @@ const Header = props => (
         searchInput,
         click,
         onChangeSearchInput,
+        onEmptyInput,
         setSearchInput,
         onMoreOptionsState,
         searchBox,
@@ -38,6 +39,9 @@ const Header = props => (
       const ChangeSearchInput = event => {
         onChangeSearchInput(event.target.value)
       }
+      const emptyInput = event => {
+        onEmptyInput(event.target.value)
+      }
 
       const onsetSearchInput = () => {
         setSearchInput()
@@ -55,6 +59,7 @@ const Header = props => (
             placeholder="Search Caption"
             onChange={ChangeSearchInput}
             value={searchInput}
+            onKeyDown={emptyInput}
           />
           <button
             className="button-s"
@@ -122,6 +127,7 @@ const Header = props => (
                   placeholder="Search Caption"
                   onChange={ChangeSearchInput}
                   value={searchInput}
+                  onKeyDown={emptyInput}
                 />
                 <button
                   className="button-s"

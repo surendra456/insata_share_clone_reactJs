@@ -17,6 +17,7 @@ class App extends Component {
     click: false,
     searchPostView: false,
     searchValue: false,
+    k: true,
   }
 
   closeHeaderButtonIn = () => {
@@ -24,6 +25,10 @@ class App extends Component {
   }
 
   onChangeSearchInput = input => {
+    const {searchInput} = this.state
+    if (searchInput === '') {
+      this.setState({searchPostView: false})
+    }
     this.setState({searchInput: input})
   }
 
@@ -42,6 +47,12 @@ class App extends Component {
     }))
   }
 
+  onEmptyInput = event => {
+    if (event === 'BackSpace') {
+      this.setState(prev => ({k: !prev.k}))
+    }
+  }
+
   render() {
     const {searchInput, searchPostView, click, searchValue} = this.state
 
@@ -57,6 +68,7 @@ class App extends Component {
           onMoreOptionsState: this.moreOptions,
           searchBox: this.searchBox,
           closeHeaderButtonIn: this.closeHeaderButtonIn,
+          onEmptyInput: this.onEmptyInput,
         }}
       >
         <Switch>

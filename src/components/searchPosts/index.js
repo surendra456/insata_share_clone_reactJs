@@ -156,7 +156,7 @@ class SearchPostsList extends Component {
 
   renderPostsSuccessView = () => {
     const {searchPostsData} = this.state
-    console.log(searchPostsData)
+
     return (
       <SearchContext.Provider
         value={{
